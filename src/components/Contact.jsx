@@ -50,8 +50,8 @@ const Contact = () => {
                 </svg>
             ),
             title: 'Email',
-            value: 'sulistyofajar@email.com',
-            link: 'mailto:sulistyofajar@email.com',
+            value: 'sulistyofajar@gmail.com',
+            link: 'mailto:sulistyofajar@gmail.com',
         },
         {
             icon: (
