@@ -47,12 +47,12 @@ const projects = [
         github: 'https://github.com/skutanjir/tic-tac-to-Game-Java',
     },
     {
-        title: 'Portfolio Website',
-        description: 'A modern, responsive portfolio website with smooth animations, dark theme, and optimized performance.',
-        tags: ['React', 'Tailwind', 'Vite', 'CSS'],
+        title: 'Microsoft-Reward-Bot',
+        description: 'A Automation Microsoft Reward Bot',
+        tags: ['React'],
         image: '💼',
         color: 'from-pink-500/20 to-rose-600/20',
-        link: '#',
+        link: 'https://github.com/skutanjir/Microsoft-Reward-Bot.git',
         github: '#',
     },
 ]
