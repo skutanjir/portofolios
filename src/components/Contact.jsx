@@ -7,6 +7,8 @@ const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
     const [sending, setSending] = useState(false)
 
+    const [toast, setToast] = useState({ show: false, message: '', type: '' })
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -17,6 +19,11 @@ const Contact = () => {
         if (ref.current) observer.observe(ref.current)
         return () => observer.disconnect()
     }, [])
+
+    const showToast = (message, type) => {
+        setToast({ show: true, message, type })
+        setTimeout(() => setToast({ show: false, message: '', type: '' }), 5000)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -30,11 +37,11 @@ const Contact = () => {
 
             await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
 
-            alert('Message sent! Thank you for reaching out.')
+            showToast('Message sent successfully! I will get back to you soon.', 'success')
             setFormData({ name: '', email: '', message: '' })
         } catch (error) {
             console.error('EmailJS Error:', error)
-            alert('Oops! Something went wrong while sending your message.')
+            showToast('Oops! Something went wrong while sending your message.', 'error')
         } finally {
             setSending(false)
         }
@@ -48,8 +55,8 @@ const Contact = () => {
                 </svg>
             ),
             title: 'Email',
-            value: 'sulistyofajar@gmail.com',
-            link: 'mailto:sulistyofajar@gmail.com',
+            value: 'sulistyofajarpratama@gmail.com',
+            link: 'mailto:sulistyofajarpratama@gmail.com',
         },
         {
             icon: (
@@ -214,6 +221,26 @@ const Contact = () => {
                         </button>
                     </form>
                 </div>
+            </div>
+
+            {/* Toast Notification */}
+            <div
+                className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 transform ${toast.show ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'
+                    } ${toast.type === 'success'
+                        ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 backdrop-blur-md'
+                        : 'bg-red-500/10 border border-red-500/20 text-red-400 backdrop-blur-md'
+                    }`}
+            >
+                {toast.type === 'success' ? (
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                ) : (
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                )}
+                <span className="font-medium">{toast.message}</span>
             </div>
         </section>
     )
