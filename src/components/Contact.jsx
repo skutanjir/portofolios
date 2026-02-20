@@ -23,10 +23,10 @@ const Contact = () => {
         setSending(true)
 
         try {
-            // Replace these with your actual EmailJS IDs
-            const serviceId = 'YOUR_SERVICE_ID'
-            const templateId = 'YOUR_TEMPLATE_ID'
-            const publicKey = 'YOUR_PUBLIC_KEY'
+            // Read from environment variables
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
             await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
 
