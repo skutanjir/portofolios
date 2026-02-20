@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const ref = useRef()
+    const formRef = useRef()
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
     const [sending, setSending] = useState(false)
 
@@ -21,22 +23,18 @@ const Contact = () => {
         setSending(true)
 
         try {
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
+            // Replace these with your actual EmailJS IDs
+            const serviceId = 'YOUR_SERVICE_ID'
+            const templateId = 'YOUR_TEMPLATE_ID'
+            const publicKey = 'YOUR_PUBLIC_KEY'
 
-            if (response.ok) {
-                alert('Message sent! Thank you for reaching out.')
-                setFormData({ name: '', email: '', message: '' })
-            } else {
-                alert('Oops! There was a problem sending your message.')
-            }
+            await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+
+            alert('Message sent! Thank you for reaching out.')
+            setFormData({ name: '', email: '', message: '' })
         } catch (error) {
-            alert('Oops! Something went wrong.')
+            console.error('EmailJS Error:', error)
+            alert('Oops! Something went wrong while sending your message.')
         } finally {
             setSending(false)
         }
@@ -153,7 +151,7 @@ const Contact = () => {
                     </div>
 
                     {/* Contact Form */}
-                    <form onSubmit={handleSubmit} className="lg:col-span-3 glass rounded-3xl p-6 md:p-8 space-y-6">
+                    <form ref={formRef} onSubmit={handleSubmit} className="lg:col-span-3 glass rounded-3xl p-6 md:p-8 space-y-6">
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div>
                                 <label className="text-sm text-gray-400 mb-2 block">Your Name</label>
