@@ -71,14 +71,21 @@ const About = () => {
                         </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                            {stats.map((stat) => (
-                                <div key={stat.label} className="glass rounded-2xl p-6 text-center hover-lift cursor-default transition-all duration-300">
-                                    <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">{stat.number}</div>
-                                    <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-widest">{stat.label}</div>
-                                </div>
-                            ))}
-                        </div>
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto place-items-center">
+    {stats.map((stat) => (
+        <div 
+            key={stat.label} 
+            className="glass rounded-2xl p-6 text-center hover-lift cursor-default transition-all duration-300"
+        >
+            <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">
+                {stat.number}
+            </div>
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-widest">
+                {stat.label}
+            </div>
+        </div>
+    ))}
+</div>
                     </div>
                 </div>
             </div>
