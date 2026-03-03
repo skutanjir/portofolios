@@ -15,9 +15,7 @@ const About = () => {
     }, [])
 
     const stats = [
-        { number: '3+', label: 'Years Experience' },
-        { number: '20+', label: 'Projects Done' },
-        { number: '10+', label: 'Happy Clients' },
+        { number: '2+', label: 'Projects Done' },
         { number: '5+', label: 'Technologies' },
     ]
 
