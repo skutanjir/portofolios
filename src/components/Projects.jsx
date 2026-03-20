@@ -2,57 +2,84 @@ import { useEffect, useRef, useState } from 'react'
 
 const projects = [
     {
-        title: 'Antrian Pasien',
-        description: 'Queue management system for healthcare facilities. Streamlines patient flow and reduces waiting times.',
-        tags: ['PHP', 'MySQL', 'Web App'],
-        image: '🏥',
+        title: 'E-Commerce-Nexus',
+        description: 'Full-featured e-commerce web application using React and TypeScript, integrated with Supabase backend and Midtrans payment gateway for secure online transactions.',
+        tags: ['React', 'TypeScript', 'Supabase'],
+        image: '🛒',
         color: 'from-blue-500/20 to-cyan-600/20',
-        
-        github: 'https://github.com/skutanjir/Antrian-Pasien',
+        github: 'https://github.com/skutanjir/E-Commerce-Nexus',
     },
     {
-        title: 'E-Perpustakaan',
-        description: 'Digital library management system for managing book loans, returns, and inventory tracking.',
-        tags: ['PHP', 'MySQL', 'Management'],
-        image: '📚',
-        color: 'from-emerald-500/20 to-green-600/20',
-        
-        github: 'https://github.com/skutanjir/E-Perpustakaan',
+        title: 'MyKelasWeb',
+        description: 'A web-based classroom management platform built with TypeScript, designed to manage courses, students, and learning activities efficiently.',
+        tags: ['TypeScript', 'Web App'],
+        image: '🎓',
+        color: 'from-violet-500/20 to-purple-600/20',
+        github: 'https://github.com/skutanjir/MyKelasWeb',
+    },
+    {
+        title: 'MyKelasBackEnd',
+        description: 'RESTful backend API for the MyKelas platform, handling authentication, course management, and data processing using Node.js and JavaScript.',
+        tags: ['Node.js', 'JavaScript', 'REST API'],
+        image: '⚙️',
+        color: 'from-slate-500/20 to-gray-600/20',
+        github: 'https://github.com/skutanjir/MyKelasBackEnd',
     },
     {
         title: 'Chat App React',
-        description: 'Real-time chat application frontend built with React, featuring responsive design and interactive UI.',
-        tags: ['React', 'WebSocket', 'UI/UX'],
+        description: 'Real-time chat application frontend built with React, featuring responsive design and interactive UI for seamless communication.',
+        tags: ['React', 'JavaScript', 'UI/UX'],
         image: '💬',
-        color: 'from-violet-500/20 to-purple-600/20',
-        
+        color: 'from-emerald-500/20 to-green-600/20',
         github: 'https://github.com/skutanjir/Chat-App-React',
     },
     {
         title: 'Chat App NodeJS',
-        description: 'Backend server for the chat application, handling real-time socket connections and message routing.',
+        description: 'Backend server for the real-time chat application, handling socket connections and message routing using Node.js and Socket.io.',
         tags: ['Node.js', 'Socket.io', 'Backend'],
         image: '🔌',
-        color: 'from-slate-500/20 to-gray-600/20',
-        
+        color: 'from-orange-500/20 to-amber-600/20',
         github: 'https://github.com/skutanjir/Chat-App-NodeJS',
     },
     {
-        title: 'Tic-Tac-Toe Java',
-        description: 'Classic Tic-Tac-Toe game implementation in Java, demonstrating object-oriented programming concepts.',
-        tags: ['Java', 'OOP', 'Game Dev'],
-        image: '🎮',
-        color: 'from-orange-500/20 to-red-600/20',
-        
-        github: 'https://github.com/skutanjir/tic-tac-to-Game-Java',
+        title: 'Microsoft Reward Bot',
+        description: 'Automation bot built with TypeScript to automate Microsoft Rewards point collection tasks, improving efficiency through scripted interactions.',
+        tags: ['TypeScript', 'Automation'],
+        image: '🤖',
+        color: 'from-pink-500/20 to-rose-600/20',
+        github: 'https://github.com/skutanjir/Microsoft-Reward-Bot',
     },
     {
-        title: 'Microsoft-Reward-Bot',
-        description: 'A Automation Microsoft Reward Bot',
-        tags: ['React'],
-        image: '💼',
-        color: 'from-pink-500/20 to-rose-600/20',
-        github: 'https://github.com/skutanjir/Microsoft-Reward-Bot.git',
+        title: 'Antrian Pasien',
+        description: 'Queue management system for healthcare facilities built with Java. Streamlines patient flow and reduces waiting times with real-time queue tracking.',
+        tags: ['Java', 'OOP', 'Web App'],
+        image: '🏥',
+        color: 'from-blue-500/20 to-sky-600/20',
+        github: 'https://github.com/skutanjir/Antrian-Pasien',
+    },
+    {
+        title: 'E-Perpustakaan',
+        description: 'Digital library management system for managing book loans, returns, and inventory tracking, built with TypeScript and a clean admin dashboard.',
+        tags: ['TypeScript', 'Web App'],
+        image: '📚',
+        color: 'from-teal-500/20 to-cyan-600/20',
+        github: 'https://github.com/skutanjir/E-Perpustakaan',
+    },
+    {
+        title: 'List Makanan Simple React',
+        description: 'A simple food listing application built with React, demonstrating component-based UI design and state management for displaying menu items.',
+        tags: ['React', 'JavaScript'],
+        image: '🍽️',
+        color: 'from-yellow-500/20 to-orange-600/20',
+        github: 'https://github.com/skutanjir/List-Makanan-Simple-React',
+    },
+    {
+        title: 'Tic-Tac-Toe Java',
+        description: 'Classic Tic-Tac-Toe game implementation in Java, demonstrating object-oriented programming concepts and game logic design.',
+        tags: ['Java', 'OOP', 'Game Dev'],
+        image: '🎮',
+        color: 'from-red-500/20 to-rose-600/20',
+        github: 'https://github.com/skutanjir/tic-tac-to-Game-Java',
     },
 ]
 
@@ -60,7 +87,7 @@ const Projects = () => {
     const ref = useRef()
     const [filter, setFilter] = useState('All')
 
-    const tags = ['All', 'React', 'Node.js', 'PHP', 'Java', 'Web App']
+    const tags = ['All', 'React', 'TypeScript', 'Node.js', 'JavaScript', 'Java', 'Supabase']
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -121,15 +148,21 @@ const Projects = () => {
                                 <span className="text-6xl group-hover:scale-110 transition-transform duration-500">
                                     {project.image}
                                 </span>
-                                {/* Overlay on hover */}
                                 <div className="absolute inset-0 bg-dark-900/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                    <a href={project.github} className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:scale-110 transition-transform" title="Source Code">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:scale-110 transition-transform"
+                                        title="Source Code"
+                                    >
                                         <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                         </svg>
                                     </a>
                                 </div>
                             </div>
+
                             {/* Project Info */}
                             <div className="p-6">
                                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-light transition-colors">

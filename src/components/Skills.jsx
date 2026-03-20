@@ -2,39 +2,39 @@ import { useEffect, useRef } from 'react'
 
 const skills = [
     {
-        category: 'Frontend',
-        icon: '🎨',
+        category: 'Programming Languages',
+        icon: '💻',
         items: [
-            { name: 'HTML5', level: 95, color: '#e34f26' },
-            { name: 'CSS3', level: 90, color: '#1572b6' },
+            { name: 'PHP', level: 82, color: '#777bb4' },
             { name: 'JavaScript', level: 90, color: '#f7df1e' },
-            { name: 'React', level: 85, color: '#61dafb' },
-            { name: 'Tailwind CSS', level: 88, color: '#06b6d4' },
             { name: 'TypeScript', level: 75, color: '#3178c6' },
+            { name: 'Kotlin', level: 78, color: '#7f52ff' },
+            { name: 'Dart', level: 80, color: '#00b4ab' },
+            { name: 'Java', level: 72, color: '#f89820' },
         ]
     },
     {
-        category: 'Backend',
+        category: 'Frameworks & Mobile',
         icon: '⚙️',
         items: [
-            { name: 'Node.js', level: 85, color: '#339933' },
-            { name: 'Express.js', level: 82, color: '#ffffff' },
-            { name: 'Python', level: 70, color: '#3776ab' },
-            { name: 'PHP', level: 72, color: '#777bb4' },
-            { name: 'REST API', level: 88, color: '#8b5cf6' },
-            { name: 'GraphQL', level: 65, color: '#e535ab' },
+            { name: 'React', level: 85, color: '#61dafb' },
+            { name: 'Laravel', level: 82, color: '#ff2d20' },
+            { name: 'Flutter', level: 80, color: '#54c5f8' },
+            { name: 'Vue.js', level: 72, color: '#42b883' },
+            { name: 'CodeIgniter', level: 75, color: '#ee4623' },
+            { name: 'Node.js', level: 75, color: '#339933' },
         ]
     },
     {
         category: 'Database & Tools',
         icon: '🗄️',
         items: [
-            { name: 'MongoDB', level: 80, color: '#47a248' },
-            { name: 'MySQL', level: 78, color: '#4479a1' },
-            { name: 'PostgreSQL', level: 72, color: '#4169e1' },
-            { name: 'Git', level: 88, color: '#f05032' },
-            { name: 'Docker', level: 65, color: '#2496ed' },
+            { name: 'MySQL', level: 82, color: '#4479a1' },
+            { name: 'PostgreSQL', level: 75, color: '#4169e1' },
+            { name: 'MongoDB', level: 72, color: '#47a248' },
             { name: 'Firebase', level: 75, color: '#ffca28' },
+            { name: 'Supabase', level: 78, color: '#3ecf8e' },
+            { name: 'Git', level: 88, color: '#f05032' },
         ]
     },
 ]
@@ -69,7 +69,6 @@ const Skills = () => {
                     </p>
                 </div>
 
-                {/* Skills Grid */}
                 {/* Skills Grid */}
                 <div className="flex flex-wrap justify-center gap-8 md:gap-10 max-w-7xl mx-auto">
                     {skills.map((group) => (

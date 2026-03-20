@@ -14,6 +14,7 @@ const Navbar = () => {
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#about' },
         { name: 'Skills', href: '#skills' },
+        { name: 'Experience', href: '#experience' },
         { name: 'Projects', href: '#projects' },
         { name: 'Contact', href: '#contact' },
     ]
@@ -80,7 +81,7 @@ const Navbar = () => {
                         </a>
                     ))}
                     <a
-                        href="#"
+                        href="https://drive.google.com/file/d/1nlneh-IOuBUZn8TOgYtI1p5VYgPgodsP/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setMenuOpen(false)}

@@ -15,8 +15,10 @@ const About = () => {
     }, [])
 
     const stats = [
-        { number: '2+', label: 'Projects Done' },
-        { number: '5+', label: 'Technologies' },
+        { number: '3.50', label: 'Current GPA' },
+        { number: '6+', label: 'Projects Done' },
+        { number: '10+', label: 'Technologies' },
+        { number: '1', label: 'Internship' },
     ]
 
     return (
@@ -36,17 +38,14 @@ const About = () => {
                     {/* Profile Image */}
                     <div className="relative group flex justify-center w-full">
                         <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-                            {/* Gradient Border Ring */}
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-accent p-[2px] rotate-6 group-hover:rotate-0 transition-transform duration-500">
                                 <div className="w-full h-full rounded-3xl bg-dark-800" />
                             </div>
-                            {/* Image Container */}
                             <div className="absolute inset-0 rounded-3xl overflow-hidden glass">
                                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                                     <span className="text-8xl">👨‍💻</span>
                                 </div>
                             </div>
-                            {/* Floating Badge */}
                             <div className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 animate-float">
                                 <span className="text-sm font-semibold gradient-text">Full Stack Dev</span>
                             </div>
@@ -59,33 +58,33 @@ const About = () => {
                             A Passionate Developer Based in Indonesia 🇮🇩
                         </h3>
                         <p className="text-gray-400 leading-relaxed mb-6 text-lg max-w-3xl mx-auto">
-                            I'm <span className="text-white font-semibold">Sulistyo Fajar Pratama</span>, a Full Stack Developer
-                            with a passion for building interactive and responsive web applications. I have experience
-                            working with modern technologies including React, Node.js, and various databases.
+                            I'm <span className="text-white font-semibold">Sulistyo Fajar Pratama</span>, an Informatics
+                            Engineering student at Electronic Engineering Polytechnic Institute of Surabaya (EEPIS) with
+                            strong interest in software development, web applications, and system automation.
                         </p>
                         <p className="text-gray-400 leading-relaxed mb-10 text-lg max-w-3xl mx-auto">
-                            I enjoy turning complex problems into simple, beautiful, and intuitive solutions.
-                            My goal is to create digital experiences that are not only functional but also
-                            visually stunning and user-friendly. From frontend design to backend architecture,
-                            I bring a holistic approach to every project.
+                            Experienced in building web-based systems using WordPress, mobile applications using Kotlin
+                            and Flutter, and automation tools such as WhatsApp bots. Skilled in React and TypeScript for
+                            modern web development, with hands-on experience integrating backend services and payment
+                            systems using Supabase and Midtrans.
                         </p>
 
                         {/* Stats */}
-<div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto place-items-center">
-    {stats.map((stat) => (
-        <div 
-            key={stat.label} 
-            className="glass rounded-2xl p-6 text-center hover-lift cursor-default transition-all duration-300"
-        >
-            <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">
-                {stat.number}
-            </div>
-            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-widest">
-                {stat.label}
-            </div>
-        </div>
-    ))}
-</div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto place-items-center">
+                            {stats.map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="glass rounded-2xl p-6 text-center hover-lift cursor-default transition-all duration-300"
+                                >
+                                    <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">
+                                        {stat.number}
+                                    </div>
+                                    <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-widest">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
